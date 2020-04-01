@@ -1,26 +1,32 @@
+// Default imports
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+// Module imports
+import 'materialize-css/dist/css/materialize.css';
+import 'materialize-css/dist/js/materialize'
+import {BrowserRouter, Route} from "react-router-dom";
+import 'material-icons/iconfont/material-icons.scss';
+
+// Component imports
+import Home from './components/home/home';
+import About from './components/about/about';
+import Portfolio from './containers/portfolio/portfolio';
+import Contact from './components/contact/contact';
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        // HTML here
+        <BrowserRouter>
+            <div className="App">
+                <Route exact path='/' component={Home}/>
+                <Route path='/about' component={About}/>
+                <Route path='/portfolio' component={Portfolio}/>
+                <Route path='/contact' component={Contact}/>
+            </div>
+        </BrowserRouter>
+    );
 }
 
+// Default export
 export default App;
