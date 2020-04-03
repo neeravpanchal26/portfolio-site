@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Custom imports
-import Nav from '../navbar/navbar';
+import Nav from '../../containers/navbar/navbar';
 
 const Contact = () => {
     return (

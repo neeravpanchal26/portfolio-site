@@ -3,6 +3,7 @@ import React from 'react';
 
 // Custom imports
 import './home.scss';
+import {NavLink} from "react-router-dom";
 
 const Home = () => {
     return (
@@ -14,10 +15,9 @@ const Home = () => {
                     I'm a full-stack web developer.
                 </div>
                 <br/>
-                <a href='/about' className="waves-effect waves-light btn-flat white">
-                    <i className="material-icons right">add</i>
-                    Find out more
-                </a>
+                <NavLink to='/about' className="waves-effect waves-light btn-flat white">
+                    Find out more.
+                </NavLink>
             </div>
         </div>
     )
