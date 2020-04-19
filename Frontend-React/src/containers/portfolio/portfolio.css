@@ -1,0 +1,13 @@
+.card-action {
+    padding: 0 !important;
+}
+
+.letter {
+    font-size: 100px;
+}
+
+.card:hover .letter {
+    background: -webkit-linear-gradient(90deg,blue, purple, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

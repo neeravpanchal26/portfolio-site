@@ -1,0 +1,13 @@
+#description {
+    font-size: large;
+}
+
+#Icon {
+    font-size: 80px;
+}
+
+.card:hover #Icon{
+    background: -webkit-linear-gradient(45deg,blue, purple, red);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
