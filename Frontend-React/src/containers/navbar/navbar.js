@@ -5,10 +5,9 @@ import React, {Component} from 'react';
 import {NavLink} from "react-router-dom";
 import './navbar.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
-import {MdHome, MdInfo, MdWork, MdPhone, MdMenu} from 'react-icons/md';
+import {MdHome, MdInfo, MdWork, MdPhone, MdMenu,MdTimeline} from 'react-icons/md';
 import {connect} from 'react-redux';
 import $ from "jquery";
-import Initials from '../../assets/favicon.png';
 
 class Nav extends Component {
     // Form load
@@ -21,7 +20,7 @@ class Nav extends Component {
 
     render() {
         // Extracting data from redux store
-        const {firstName, lastName, email} = this.props.personalInfo;
+        const {firstName, lastName} = this.props.personalInfo;
         return (
             // HTML here
             <div>
@@ -40,32 +39,37 @@ class Nav extends Component {
                         <div className="user-view">
                             <div className="background">
                             </div>
-                            <img alt='initials' className="circle" src={Initials}/>
+                            <span className='initials'>{firstName.toString().slice(0,1)+lastName.toString().slice(0,1)}</span>
                             <span className="name">{firstName + ' ' + lastName}</span>
-                            <a href={'mailto:' + email} className="email black-text">{email}</a>
                         </div>
                     </li>
                     <li>
                         <NavLink to="/">
-                            <i><MdHome/></i>
+                            <i><MdHome className='black-text' id='Icon'/></i>
                             Home
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/about">
-                            <i><MdInfo/></i>
+                            <i><MdInfo className='black-text' id='Icon'/></i>
                             About
                         </NavLink>
                     </li>
                     <li>
+                        <NavLink to="/timeline">
+                            <i><MdTimeline className='black-text' id='Icon'/></i>
+                            Timeline
+                        </NavLink>
+                    </li>
+                    <li>
                         <NavLink to="/portfolio">
-                            <i><MdWork/></i>
+                            <i><MdWork className='black-text' id='Icon'/></i>
                             Portfolio
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/contact">
-                            <i><MdPhone/></i>
+                            <i><MdPhone className='black-text' id='Icon'/></i>
                             Contact
                         </NavLink>
                     </li>

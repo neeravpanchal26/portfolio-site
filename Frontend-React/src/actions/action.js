@@ -7,8 +7,8 @@ axios.defaults.baseURL = 'https://thawing-lowlands-03153.herokuapp.com';
 export const PERSONAL_INFO = 'PERSONAL_INFO';
 export const ABILITIES = 'ABILITIES';
 export const SKILLS = 'SKILLS';
+export const EVENTS = 'EVENTS';
 export const PENDING_FALSE = 'PENDING_FALSE';
-export const PENDING_TRUE='PENDING_TRUE';
 
 function SetPersonalInfo(personalInfo) {
     return {
@@ -31,27 +31,29 @@ function SetSkills(skills) {
     }
 }
 
+function SetEvents(events) {
+    return {
+        type: EVENTS,
+        events: events
+    }
+}
+
 function SetPendingFalse() {
     return {
         type: PENDING_FALSE
     }
 }
 
-function SetPendingTrue() {
-    return {
-        type: PENDING_TRUE
-    }
-}
-
 export function GetPersonalInfo() {
-    SetPendingTrue();
     return (dispatch) => {
         // Get data from wagtail cms here
         return axios
             .get('/api/v2/pages/?type=personalinfo.personalinfo&fields=*')
             .then(data => {
                     dispatch(SetPersonalInfo(data.data.items[0]));
-                    dispatch(SetPendingFalse());
+                    dispatch(GetAbilities());
+                    dispatch(GetSkills());
+                    dispatch(GetEvents());
                 }
             )
             .catch(error => console.log(error));
@@ -59,14 +61,12 @@ export function GetPersonalInfo() {
 }
 
 export function GetAbilities() {
-    SetPendingTrue();
     return (dispatch) => {
         // Get data from wagtail cms here
         return axios
             .get('/api/v2/pages/?type=abilities.Abilities&fields=*')
             .then(data => {
                     dispatch(SetAbilities(data.data.items));
-                    dispatch(SetPendingFalse());
                 }
             )
             .catch(error => console.log(error));
@@ -74,21 +74,28 @@ export function GetAbilities() {
 }
 
 export function GetSkills() {
-    SetPendingTrue();
     return (dispatch) => {
         // Get data from wagtail cms here
         return axios
             .get('/api/v2/pages/?type=skills.skills&fields=*')
             .then(data => {
                     dispatch(SetSkills(data.data.items));
-                    dispatch(SetPendingFalse());
                 }
             )
             .catch(error => console.log(error));
     }
 }
 
-
-
-
-
+export function GetEvents() {
+    return (dispatch) => {
+        // Get data from wagtail cms here
+        return axios
+            .get('/api/v2/pages/?type=events.events&fields=*&order=-id')
+            .then(data => {
+                    dispatch(SetEvents(data.data.items));
+                    dispatch(SetPendingFalse());
+                }
+            )
+            .catch(error => console.log(error));
+    }
+}

@@ -1,9 +1,10 @@
-import {PERSONAL_INFO, ABILITIES, SKILLS, PENDING_FALSE, PENDING_TRUE} from "../actions/action";
+import {PERSONAL_INFO, ABILITIES, SKILLS, PENDING_FALSE, EVENTS} from "../actions/action";
 
 const initState = {
     personalInfo: {},
     abilities: [],
     skills: [],
+    events: [],
     pending: true
 };
 
@@ -14,10 +15,10 @@ const Reducer = (state = initState, action) => {
         return {...state, abilities: action.abilities}
     } else if (action.type === SKILLS) {
         return {...state, skills: action.skills}
-    } else if (action.type===PENDING_FALSE) {
+    } else if (action.type === EVENTS) {
+        return {...state, events: action.events}
+    } else if (action.type === PENDING_FALSE) {
         return {...state, pending: false}
-    }else if (action.type===PENDING_TRUE) {
-        return {...state, pending: true}
     } else {
         return {...state}
     }

@@ -11,18 +11,10 @@ import 'material-icons';
 import Loader from "../../components/loader/loader";
 
 class About extends Component {
-    // Component load
-    componentDidMount() {
-        this.props.GetAbilities();
-        this.props.GetSkills();
-    }
-
     renderLoader = () => {
-        const {pending} = this.props;
-        if (pending) {
-            return (
-                <Loader/>
-            );
+        const {abilities, skills} = this.props;
+        if (abilities.length === 0 || skills.length === 0) {
+            return <Loader/>
         } else {
             return null;
         }
@@ -40,9 +32,10 @@ class About extends Component {
             <div className='col s12 m6 l3 center-align' id={id}>
                 <div className='card hoverable'>
                     <div className='card-content'>
-                        <span className="material-icons" id='Icon'>{abilityIcon}</span>
+                        <i className="large material-icons" id='Icon'>{abilityIcon}</i>
                         <span className="card-title">{title}</span>
-                        <span dangerouslySetInnerHTML={{__html: abilityDescription}}></span>
+                        <span dangerouslySetInnerHTML={{__html: abilityDescription}}>
+                        </span>
                     </div>
                 </div>
             </div>

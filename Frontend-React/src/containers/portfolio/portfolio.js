@@ -10,6 +10,7 @@ import {connect} from 'react-redux';
 import * as personalInfo from '../../actions/action';
 import Footer from "../../components/footer/footer";
 import Loader from "../../components/loader/loader";
+import Modal from "../modal/modal";
 
 class Portfolio extends Component {
     // default constructor
@@ -49,7 +50,7 @@ class Portfolio extends Component {
                 <div className='col s12 m6 l4'>
                     <div className='card hoverable' id={repo.id}>
                         <div className="card-content">
-                            <i className="material-icons activator right">more_vert</i>
+                            <i className="material-icons right modal-trigger" data-target={repo.name}>more_horiz</i>
                         </div>
                         <div className='card-image center'>
                             <span className='letter'>{repo.language.slice(0, 1)}</span>
@@ -58,17 +59,14 @@ class Portfolio extends Component {
                         </div>
                         <div className='card-content'>
                             <span className="card-title">{repo.name}</span>
-                            <span>Latest commit at:<br/>{new Date(repo.pushed_at).toUTCString().slice(0, 25)}
+                            <span>Latest commit:<br/>{new Date(repo.pushed_at).toUTCString().slice(0, 25)}
                             </span>
                             <div className="card-action">
                                 <a href={repo.html_url} className='blue-text'><GoRepo/></a>
                                 <span className='right'>{repo.default_branch}<GoGitBranch size={14}/></span>
                             </div>
                         </div>
-                        <div className='card-reveal'>
-                            <span className="card-title">{repo.name}<i className="material-icons right">close</i></span>
-                            <p>{repo.description}</p>
-                        </div>
+                        <Modal ID={repo.name} Heading={repo.name} Content={repo.description}/>
                     </div>
                 </div>
             ));
@@ -88,8 +86,8 @@ class Portfolio extends Component {
                     </div>
                     <div className="divider"></div>
                     <div className='row'>{this.renderRepos()}</div>
-                    <Footer/>
                 </div>
+                <Footer/>
             </div>
         )
     }

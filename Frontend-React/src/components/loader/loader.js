@@ -10,7 +10,8 @@ const Loader = () => {
             <div className='myModal-content'>
                 <div className='center'>Loading...</div>
                 <div className="progress">
-                    <div className="indeterminate"></div>
+                    <div className="indeterminate">
+                    </div>
                 </div>
             </div>
         </div>

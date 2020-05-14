@@ -27,7 +27,7 @@ class Home extends Component {
     }
 
     render() {
-        const {firstName, lastName} = this.props.personalInfo;
+        const {firstName, lastName,jobTitle} = this.props.personalInfo;
         return (
             // HTML here
             <div>
@@ -35,12 +35,12 @@ class Home extends Component {
                 <div className='bg'>
                     <div className="contentCenter">
                         <div className='fontSize'>
-                            Hey, I'm <b>{firstName + ' ' + lastName}</b>.<br/>
-                            I'm a full-stack web developer.
+                            Hello, I'm <i>{firstName + ' ' + lastName}</i>.<br/>
+                            I'm a  <i>{jobTitle}</i>.
                         </div>
                         <br/>
-                        <NavLink to='/about' className="waves-effect waves-light btn-flat white">
-                            Find out more.
+                        <NavLink to='/about' className="waves-effect waves-light btn-flat white-text" id='btnMore'>
+                            Find out more
                         </NavLink>
                     </div>
                 </div>

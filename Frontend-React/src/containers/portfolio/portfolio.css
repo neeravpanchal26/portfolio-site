@@ -7,7 +7,13 @@
 }
 
 .card:hover .letter {
-    background: -webkit-linear-gradient(90deg,blue, purple, red);
+    background: -webkit-linear-gradient(360deg, #2196f3, #e040fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+i.right:hover{
+    cursor: pointer;
+    background: -webkit-linear-gradient(360deg, #2196f3, #e040fb);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }

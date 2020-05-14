@@ -2,12 +2,8 @@
     font-size: large;
 }
 
-#Icon {
-    font-size: 80px;
-}
-
 .card:hover #Icon{
-    background: -webkit-linear-gradient(45deg,blue, purple, red);
+    background: -webkit-linear-gradient(360deg, #2196f3, #e040fb);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }

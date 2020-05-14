@@ -1,3 +1,14 @@
 .nav-wrapper {
-    background: linear-gradient(90deg, blue, purple, red);
+    background: linear-gradient(90deg, #2196f3, #e040fb);
+}
+
+span.initials {
+    font-size: 6rem;
+    background: -webkit-linear-gradient(360deg, #2196f3, #e040fb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+a:hover #Icon {
+    color: #2196f3 !important;
 }

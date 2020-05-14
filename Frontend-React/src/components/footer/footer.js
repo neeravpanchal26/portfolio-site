@@ -7,8 +7,9 @@ import {DiDjango} from 'react-icons/di';
 
 const Footer = () => {
     return (
-        <footer>
+        <footer className='container'>
             <div className="center">
+                <div className="divider"></div>
                 Powered by <FaReact/> and <DiDjango/>.
             </div>
         </footer>

@@ -35,7 +35,8 @@ class Contact extends Component {
                             <h4>Find me...</h4>
                         </div>
                     </div>
-                    <div className="divider"></div>
+                    <div className="divider">
+                    </div>
                     <div className='card'>
                         <div className='card-content'>
                             <span className='card-title center'>{firstName + ' ' + lastName}</span>
@@ -43,12 +44,15 @@ class Contact extends Component {
                                 <img alt='person' className='col s12 m12 l6' src={Person}/>
                                 <div className='col s12 m12 l6'>
                                     <h5>Let's build something amazing!</h5>
-                                    <a href={'mailto:' + email} className='black-text'><FaEnvelope/> • {email}</a>
+                                    <a href={'mailto:' + email} className='black-text'><FaEnvelope
+                                        id='Icon'/> • {email}</a>
                                     <br/>
-                                    <a href={gitProfileLink} className='black-text'><FaGithub/> • {gitProfileLink}
+                                    <a href={gitProfileLink} className='black-text'><FaGithub
+                                        id='Icon'/> • {gitProfileLink}
                                     </a>
                                     <br/>
-                                    <a href={linkedInLink} className='black-text'><FaLinkedin/> • {linkedInLink}</a>
+                                    <a href={linkedInLink} className='black-text'><FaLinkedin
+                                        id='Icon'/> • {linkedInLink}</a>
                                     <br/>
                                 </div>
                             </div>
