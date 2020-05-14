@@ -23,7 +23,7 @@ class Nav extends Component {
         const {firstName, lastName} = this.props.personalInfo;
         return (
             // HTML here
-            <div>
+            <div id='top'>
                 <nav>
                     <div className="nav-wrapper">
                         <a href='/#' data-target="sideNav" className="sidenav-trigger show-on-large">

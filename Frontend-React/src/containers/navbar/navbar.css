@@ -3,6 +3,7 @@
 }
 
 span.initials {
+    horiz-align: center;
     font-size: 6rem;
     background: -webkit-linear-gradient(360deg, #2196f3, #e040fb);
     -webkit-background-clip: text;

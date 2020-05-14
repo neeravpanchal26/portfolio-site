@@ -8,7 +8,7 @@ import './timeline.css';
 import Loader from "../../components/loader/loader";
 import {connect} from "react-redux";
 import * as Action from "../../actions/action";
-import Modal from "../modal/modal";
+import Modal from "../../components/modal/modal";
 
 class Timeline extends Component {
     renderLoader = () => {
@@ -25,7 +25,7 @@ class Timeline extends Component {
         return events.map(({id, title, eventNameTwo, eventFrom, eventTo, eventType, eventDescription, eventIcon}) => {
             if (eventDescription === '') {
                 return <div className="timeline-event" id={id}>
-                    <div className="card timeline-content hoverable">
+                    <div className="card timeline-content">
                         <div className="card-content">
                             <span className="card-title">{title}
                             </span>
@@ -40,7 +40,7 @@ class Timeline extends Component {
                 </div>
             } else {
                 return <div className="timeline-event" id={id}>
-                    <div className="card timeline-content hoverable">
+                    <div className="card timeline-content">
                         <div className="card-content">
                             <span className="card-title">{title}
                                 <i className="material-icons right modal-trigger" data-target={title}>more_horiz</i>
@@ -50,7 +50,7 @@ class Timeline extends Component {
                                 <span>{eventFrom.toUpperCase()} - {eventTo.toUpperCase()} • {eventType}</span>
                             </div>
                         </div>
-                        <Modal ID={title} Heading={eventNameTwo} Content={eventDescription}/>
+                        <Modal ID={title} Heading={title} Content={eventDescription}/>
                     </div>
                     <div className="timeline-badge white-text z-depth-2"><i className="material-icons">{eventIcon}</i>
                     </div>

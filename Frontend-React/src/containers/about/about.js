@@ -30,7 +30,7 @@ class About extends Component {
         return abilities.map(({id, title, abilityDescription, abilityIcon}) => (
             // Html build here
             <div className='col s12 m6 l3 center-align' id={id}>
-                <div className='card hoverable'>
+                <div className='card'>
                     <div className='card-content'>
                         <i className="large material-icons" id='Icon'>{abilityIcon}</i>
                         <span className="card-title">{title}</span>
@@ -46,7 +46,7 @@ class About extends Component {
         const {description, firstName, lastName} = this.props.personalInfo;
         return (
             <div className='col'>
-                <div className='card hoverable' id='me'>
+                <div className='card' id='me'>
                     <div className='card-content row'>
                         <div className='card-title center'>{firstName + ' ' + lastName}</div>
                         <div className='col s12 m6 l6' id='description'>{description}</div>

@@ -10,7 +10,7 @@ import {connect} from 'react-redux';
 import * as personalInfo from '../../actions/action';
 import Footer from "../../components/footer/footer";
 import Loader from "../../components/loader/loader";
-import Modal from "../modal/modal";
+import Modal from "../../components/modal/modal";
 
 class Portfolio extends Component {
     // default constructor
@@ -47,8 +47,8 @@ class Portfolio extends Component {
             .reverse()
             .map(repo => (
                 // Html build here
-                <div className='col s12 m6 l4'>
-                    <div className='card hoverable' id={repo.id}>
+                <div className='col s12 m6 l4' id={repo.id}>
+                    <div className='card'>
                         <div className="card-content">
                             <i className="material-icons right modal-trigger" data-target={repo.name}>more_horiz</i>
                         </div>

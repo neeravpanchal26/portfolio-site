@@ -7,12 +7,19 @@ import {DiDjango} from 'react-icons/di';
 
 const Footer = () => {
     return (
-        <footer className='container'>
-            <div className="center">
-                <div className="divider"></div>
-                Powered by <FaReact/> and <DiDjango/>.
+        <div>
+            <div className="fixed-action-btn">
+                <a href='#top' className="btn-floating btn-large hoverable">
+                    <i className="large material-icons">arrow_upward</i>
+                </a>
             </div>
-        </footer>
+            <footer className='container'>
+                <div className="center">
+                    <div className="divider"></div>
+                    Powered by <FaReact/> and <DiDjango/>.
+                </div>
+            </footer>
+        </div>
     )
 };
 

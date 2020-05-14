@@ -7,3 +7,7 @@ body {
 main {
     flex: 1 0 auto;
 }
+
+.btn-floating.btn-large {
+    background: linear-gradient(90deg, #2196f3, #e040fb);
+}

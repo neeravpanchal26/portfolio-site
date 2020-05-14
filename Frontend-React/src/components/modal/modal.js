@@ -18,6 +18,8 @@ class Modal extends Component {
                 <div ref={Modal => {this.Modal = Modal}} id={ID} className="modal">
                     <div className="modal-content">
                         <h5>{Heading}<i className="modal-close material-icons right">close</i></h5>
+                        <div className='divider'>
+                        </div>
                         <span dangerouslySetInnerHTML={{__html: Content}}>
                             </span>
                     </div>
