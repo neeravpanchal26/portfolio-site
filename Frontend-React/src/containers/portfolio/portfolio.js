@@ -43,8 +43,17 @@ class Portfolio extends Component {
     };
 
     renderRepos = () => {
-        return this.state.gitData
-            .reverse()
+        const {gitData} = this.state;
+        const options = {
+            weekday: 'short',
+            day: '2-digit',
+            month: 'short',
+            year: 'numeric',
+            hour: '2-digit',
+            minute: '2-digit'
+        };
+        return gitData
+            .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at))
             .map(repo => (
                 // Html build here
                 <div className='col s12 m6 l4' id={repo.id}>
@@ -52,6 +61,7 @@ class Portfolio extends Component {
                         <div className="card-content">
                             <i className="material-icons right modal-trigger" data-target={repo.name}>more_horiz</i>
                         </div>
+                        <br/>
                         <div className='card-image center'>
                             <span className='letter'>{repo.language.slice(0, 1)}</span>
                             <br/>
@@ -59,7 +69,7 @@ class Portfolio extends Component {
                         </div>
                         <div className='card-content'>
                             <span className="card-title">{repo.name}</span>
-                            <span>Latest commit:<br/>{new Date(repo.pushed_at).toUTCString().slice(0, 25)}
+                            <span>Latest commit:<br/>{new Date(repo.pushed_at).toLocaleString('en-ZA', options)}
                             </span>
                             <div className="card-action">
                                 <a href={repo.html_url} className='blue-text'><GoRepo/></a>
