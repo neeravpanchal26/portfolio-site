@@ -19,7 +19,7 @@
   width: 1px;
   height: calc(50% - 30px);
   position: absolute;
-  background: #e0e0e0;
+  background: var(--grey);
   left: calc(50% - 1px);
   top: 0;
 }
@@ -30,7 +30,7 @@
   width: 1px;
   height: calc(50% - 30px);
   position: absolute;
-  background: #e0e0e0;
+  background: var(--grey);
   left: calc(50% - 1px);
   top: calc(50% + 30px);
 }
@@ -56,7 +56,7 @@
   position: absolute;
   width: 40px;
   height: 40px;
-  background: linear-gradient(90deg, #2196f3, #e040fb);
+  background: linear-gradient(90deg, var(--blue), var(--pink));
   top: calc(50% - 20px);
   right: calc(50% - 20px);
   border-radius: 50%;

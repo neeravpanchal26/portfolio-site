@@ -1,21 +1,21 @@
 .nav-wrapper {
-  background: linear-gradient(90deg, #2196f3, #e040fb);
+  background: linear-gradient(90deg, var(--blue), var(--pink));
 }
 
 span.initials {
   horiz-align: center;
   font-size: 6rem;
-  background: -webkit-linear-gradient(360deg, #2196f3, #e040fb);
+  background: -webkit-linear-gradient(360deg, var(--blue), var(--pink));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 a:hover #Icon {
-  color: #2196f3 !important;
+  color: var(--blue) !important;
 }
 span.lever::after {
-  background: linear-gradient(90deg, #2196f3, #e040fb);
+  background: linear-gradient(90deg, var(--blue), var(--pink));
 }
 span.lever {
-  background: linear-gradient(90deg, #e3f2fd, #f3e5f5);
+  background: linear-gradient(90deg, var(--blue-opaque), var(--pink-opaque));
 }

@@ -1,13 +1,17 @@
 .progress {
-  background: linear-gradient(90deg, #e3f2fd, #f3e5f5) !important;
+  background: linear-gradient(
+    90deg,
+    var(--blue-opaque),
+    var(--pink-opaque)
+  ) !important;
 }
 
 .indeterminate::before {
-  background: linear-gradient(90deg, #2196f3, #e040fb) !important;
+  background: linear-gradient(90deg, var(--blue), var(--pink)) !important;
 }
 
 .indeterminate::after {
-  background: linear-gradient(90deg, #2196f3, #e040fb) !important;
+  background: linear-gradient(90deg, var(--blue), var(--pink)) !important;
 }
 
 .myModal {
@@ -20,7 +24,7 @@
 
 .myModal-content {
   border-radius: 2px;
-  background-color: white;
+  background-color: var(--text-white);
   padding: 2px;
   width: 30%; /* Could be more or less, depending on screen size */
   min-width: 300px;

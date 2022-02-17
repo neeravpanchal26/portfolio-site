@@ -3,7 +3,7 @@
 }
 
 .card:hover #Icon {
-  background: -webkit-linear-gradient(360deg, #2196f3, #e040fb);
+  background: -webkit-linear-gradient(360deg, var(--blue), var(--pink));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

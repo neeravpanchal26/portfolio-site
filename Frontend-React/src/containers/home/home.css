@@ -1,6 +1,6 @@
 .fontSize {
   font-size: xx-large;
-  color: white;
+  color: var(--text-white);
 }
 
 .contentCenter {
@@ -15,13 +15,13 @@
 .bg {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(90deg, #2196f3, #e040fb);
+  background: linear-gradient(90deg, var(--blue), var(--pink));
   background-size: 400%, 400%;
   animation: change 10s;
 }
 
 #btnMore {
-  border: solid 1px white;
+  border: solid 1px var(--text-white);
 }
 
 @keyframes change {

@@ -9,35 +9,54 @@ main {
 }
 
 .btn-floating {
-  background: linear-gradient(90deg, #2196f3, #e040fb);
+  background: linear-gradient(90deg, var(--blue), var(--pink));
 }
 
 .darkMode {
-  background: #18191b;
-  color: white;
+  background: var(--black-2);
+  color: var(--text-white);
 }
 
 .darkMode .card {
-  background: #2e3134;
-  color: white;
+  background: var(--black);
+  color: var(--text-white);
 }
 
 .darkMode .myModal-content {
-  background-color: #2e3134;
+  background-color: var(--black);
 }
 
 .darkMode .modal {
-  background-color: #2e3134;
+  background-color: var(--black);
 }
 
 .darkMode .sidenav {
-  background: #2e3134;
+  background: var(--black);
 }
 
 .darkMode a {
-  color: white !important;
+  color: var(--text-white) !important;
 }
 
 .darkMode #Icon {
-  color: white !important;
+  color: var(--text-white) !important;
+}
+
+.darkMode .chip {
+  background: var(--black-2);
+}
+.darkMode .chip:hover {
+  color: var(--blue) !important;
+}
+
+/* Color Variables */
+:root {
+  --blue: #2196f3;
+  --blue-opaque: #e3f2fd;
+  --pink: #e040fb;
+  --pink-opaque: #f3e5f5;
+  --text-white: white;
+  --black: #2e3134;
+  --black-2: #18191b;
+  --grey: #e0e0e0;
 }

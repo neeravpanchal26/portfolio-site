@@ -1,3 +1,7 @@
 .chip {
   height: auto !important;
 }
+
+.chip:hover {
+  color: var(--blue);
+}
