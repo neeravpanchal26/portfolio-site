@@ -1,13 +1,43 @@
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
 }
 
 main {
-    flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 .btn-floating {
-    background: linear-gradient(90deg, #2196f3, #e040fb);
+  background: linear-gradient(90deg, #2196f3, #e040fb);
+}
+
+.darkMode {
+  background: #18191b;
+  color: white;
+}
+
+.darkMode .card {
+  background: #2e3134;
+  color: white;
+}
+
+.darkMode .myModal-content {
+  background-color: #2e3134;
+}
+
+.darkMode .modal {
+  background-color: #2e3134;
+}
+
+.darkMode .sidenav {
+  background: #2e3134;
+}
+
+.darkMode a {
+  color: white !important;
+}
+
+.darkMode #Icon {
+  color: white !important;
 }

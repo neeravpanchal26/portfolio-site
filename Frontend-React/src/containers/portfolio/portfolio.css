@@ -1,19 +1,32 @@
 .card-action {
-    padding: 0 !important;
+  padding: 0 !important;
 }
 
 .letter {
-    font-size: 100px;
+  font-size: 100px;
+}
+
+span.card-title.text-overflow {
+  width: 100%;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  transition: text-indent 7s linear;
+}
+
+span:hover.card-title.text-overflow {
+  text-indent: -400px;
 }
 
 .card:hover .letter {
-    background: -webkit-linear-gradient(360deg, #2196f3, #e040fb);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: -webkit-linear-gradient(360deg, #2196f3, #e040fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-i.right:hover{
-    cursor: pointer;
-    background: -webkit-linear-gradient(360deg, #2196f3, #e040fb);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+
+i.right:hover {
+  cursor: pointer;
+  background: -webkit-linear-gradient(360deg, #2196f3, #e040fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

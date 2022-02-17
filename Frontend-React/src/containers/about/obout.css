@@ -1,9 +1,9 @@
 #description {
-    font-size: large;
+  font-size: large;
 }
 
-.card:hover #Icon{
-    background: -webkit-linear-gradient(360deg, #2196f3, #e040fb);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.card:hover #Icon {
+  background: -webkit-linear-gradient(360deg, #2196f3, #e040fb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
