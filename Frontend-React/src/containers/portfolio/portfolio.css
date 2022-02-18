@@ -19,14 +19,14 @@ span:hover.card-title.text-overflow {
 }
 
 .card:hover .letter {
-  background: -webkit-linear-gradient(360deg, var(--blue), var(--pink));
+  background: var(--linear-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 i.right:hover {
   cursor: pointer;
-  background: -webkit-linear-gradient(360deg, var(--blue), var(--pink));
+  background: var(--linear-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

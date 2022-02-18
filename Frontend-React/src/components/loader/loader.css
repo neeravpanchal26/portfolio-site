@@ -1,17 +1,13 @@
 .progress {
-  background: linear-gradient(
-    90deg,
-    var(--blue-opaque),
-    var(--pink-opaque)
-  ) !important;
+  background: var(--linear-gradient-opaque) !important;
 }
 
 .indeterminate::before {
-  background: linear-gradient(90deg, var(--blue), var(--pink)) !important;
+  background: var(--linear-gradient) !important;
 }
 
 .indeterminate::after {
-  background: linear-gradient(90deg, var(--blue), var(--pink)) !important;
+  background: var(--linear-gradient) !important;
 }
 
 .myModal {

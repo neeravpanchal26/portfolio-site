@@ -15,7 +15,7 @@
 .bg {
   width: 100%;
   height: 100vh;
-  background: linear-gradient(90deg, var(--blue), var(--pink));
+  background: var(--linear-gradient);
   background-size: 400%, 400%;
   animation: change 10s;
 }

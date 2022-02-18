@@ -9,9 +9,10 @@ main {
 }
 
 .btn-floating {
-  background: linear-gradient(90deg, var(--blue), var(--pink));
+  background: var(--linear-gradient);
 }
 
+/* Darkmode Styling */
 .darkMode {
   background: var(--black-2);
   color: var(--text-white);
@@ -43,6 +44,7 @@ main {
 }
 
 .darkMode .chip {
+  color: var(--text-white) !important;
   background: var(--black-2);
 }
 .darkMode .chip:hover {
@@ -59,4 +61,10 @@ main {
   --black: #2e3134;
   --black-2: #18191b;
   --grey: #e0e0e0;
+  --linear-gradient: linear-gradient(90deg, var(--blue), var(--pink));
+  --linear-gradient-opaque: linear-gradient(
+    90deg,
+    var(--blue-opaque),
+    var(--pink-opaque)
+  );
 }
