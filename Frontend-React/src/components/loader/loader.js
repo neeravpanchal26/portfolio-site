@@ -7,7 +7,7 @@ import "./loader.css";
 const Loader = () => {
   return (
     <div className="myModal">
-      <div className="myModal-content">
+      <div className="myModal-content card">
         <div className="center">Loading...</div>
         <div className="progress">
           <div className="indeterminate"></div>
