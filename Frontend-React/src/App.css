@@ -17,8 +17,7 @@ main {
 }
 
 /* Darkmode Styling */
-.darkMode,
-html {
+.darkMode {
   background: var(--black-2);
   color: var(--text-white);
 }
