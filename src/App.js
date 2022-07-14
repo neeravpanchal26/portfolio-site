@@ -20,7 +20,7 @@ class App extends Component {
 
   renderDarkMode() {
     const { darkMode } = this.props;
-    if (darkMode)
+    if (darkMode === "true")
       return (
         <div className="App darkMode">
           <Routes />

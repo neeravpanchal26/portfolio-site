@@ -42,10 +42,9 @@ class Timeline extends Component {
           eventDescription,
           eventIcon,
         }) => {
-          console.log();
           if (eventDescription === "") {
             return (
-              <div className="timeline-event" id={id}>
+              <div className="timeline-event" key={id}>
                 <div className="card timeline-content">
                   <div className="card-content">
                     <span className="card-title">{title}</span>
@@ -65,7 +64,7 @@ class Timeline extends Component {
             );
           } else {
             return (
-              <div className="timeline-event" id={id}>
+              <div className="timeline-event" key={id}>
                 <div className="card timeline-content">
                   <div className="card-content">
                     <span className="card-title">

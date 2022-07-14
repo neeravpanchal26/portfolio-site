@@ -68,7 +68,7 @@ export function SetDarkModeFalse() {
 export function SetDarkMode(darkMode) {
   return (dispatch) => {
     if (darkMode) dispatch(SetDarkModeTrue());
-    else if (darkMode === false) dispatch(SetDarkModeFalse());
+    else dispatch(SetDarkModeFalse());
   };
 }
 

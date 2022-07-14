@@ -2,14 +2,12 @@ html {
   background: var(--text-white);
 }
 
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
 main {
   flex: 1 0 auto;
+}
+
+.App{
+  min-height: 100vh;
 }
 
 .btn-floating {
@@ -52,23 +50,23 @@ main {
   background: var(--black-2);
 }
 .darkMode .chip:hover {
-  color: var(--blue) !important;
+  color: var(--color-1) !important;
 }
 
 /* Color Variables */
 :root {
-  --blue: #3f51b5;
-  --blue-opaque: #c5cae9;
-  --pink: #673ab7;
-  --pink-opaque: #d1c4e9;
+  --color-1: #3f51b5;
+  --color-1-opaque: #c5cae9;
+  --color-2: #673ab7;
+  --color-2-opaque: #d1c4e9;
   --text-white: white;
   --black: #2e3134;
   --black-2: #18191b;
   --grey: #e0e0e0;
-  --linear-gradient: linear-gradient(90deg, var(--blue), var(--pink));
+  --linear-gradient: linear-gradient(90deg, var(--color-1), var(--color-2));
   --linear-gradient-opaque: linear-gradient(
     90deg,
-    var(--blue-opaque),
-    var(--pink-opaque)
+    var(--color-1-opaque),
+    var(--color-2-opaque)
   );
 }

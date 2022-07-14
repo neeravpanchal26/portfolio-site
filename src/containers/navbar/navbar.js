@@ -49,7 +49,7 @@ class Nav extends Component {
               <label>
                 <input
                   type="checkbox"
-                  checked={this.props.darkMode}
+                  defaultChecked={this.props.darkMode === "true"}
                   onClick={(e) => this.props.SetDarkMode(e.target.checked)}
                 />
                 <span className="lever"></span>

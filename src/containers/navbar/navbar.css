@@ -11,11 +11,11 @@ span.initials {
 }
 
 a:hover #Icon {
-  color: var(--blue) !important;
+  color: var(--color-1) !important;
 }
 span.lever::after {
   background: var(--linear-gradient);
 }
 span.lever {
-  background: linear-gradient(90deg, var(--blue-opaque), var(--pink-opaque));
+  background: linear-gradient(90deg, var(--color-1-opaque), var(--color-2-opaque));
 }

@@ -14,7 +14,7 @@ const initState = {
   skills: [],
   events: [],
   pending: true,
-  darkMode: false,
+  darkMode: sessionStorage.getItem("darkMode"),
 };
 
 const Reducer = (state = initState, action) => {
@@ -29,9 +29,11 @@ const Reducer = (state = initState, action) => {
   } else if (action.type === PENDING_FALSE) {
     return { ...state, pending: false };
   } else if (action.type === DARKMODE_TRUE) {
-    return { ...state, darkMode: true };
+    sessionStorage.setItem("darkMode", true);
+    return { ...state, darkMode: sessionStorage.getItem("darkMode") };
   } else if (action.type === DARKMODE_FALSE) {
-    return { ...state, darkMode: false };
+    sessionStorage.setItem("darkMode", false);
+    return { ...state, darkMode: sessionStorage.getItem("darkMode") };
   } else {
     return { ...state };
   }
