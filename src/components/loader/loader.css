@@ -16,6 +16,7 @@
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .myModal-content {

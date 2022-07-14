@@ -2,7 +2,7 @@
 import axios from "axios";
 
 // Global variables
-axios.defaults.baseURL = "https://thawing-lowlands-03153.herokuapp.com";
+axios.defaults.baseURL = "https://neeravpanchal26.pythonanywhere.com/";
 
 export const PERSONAL_INFO = "PERSONAL_INFO";
 export const ABILITIES = "ABILITIES";

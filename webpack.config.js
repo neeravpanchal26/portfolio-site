@@ -30,17 +30,18 @@ module.exports = {
     ],
   },
   resolve: {
-    alias: {
-      process: "process/browser",
-      stream: "stream-browserify",
-      zlib: "browserify-zlib",
+    fallback: {
+      util: require.resolve("util/"),
+      assert: require.resolve("assert/"),
+      stream: require.resolve("stream-browserify"),
+      zlib: require.resolve("browserify-zlib"),
     },
   },
   plugins: [
     new HWP({ template: path.join(__dirname, "/src/index.html") }),
-    // new webpack.ProvidePlugin({
-    //   process: "process/browser",
-    //   Buffer: ["buffer", "Buffer"],
-    // }),
+    new webpack.ProvidePlugin({
+      Buffer: ["buffer", "Buffer"],
+      process: "process/browser",
+    }),
   ],
 };

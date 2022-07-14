@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 import * as personalInfo from "../../actions/action";
 import Footer from "../../components/footer/footer";
 import Loader from "../../components/loader/loader";
-import { Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
+// import { Document, Page, Text, View, StyleSheet } from "@react-pdf/renderer";
 
 class Resume extends Component {
   // default constructor

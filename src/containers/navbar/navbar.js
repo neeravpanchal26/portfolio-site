@@ -25,7 +25,6 @@ class Nav extends Component {
     const sidenav = document.querySelectorAll("#sideNav");
     M.Sidenav.init(sidenav, {});
     $(".sidenav-overlay").trigger("click");
-    console.log(this.props);
   }
 
   render() {
