@@ -5,13 +5,13 @@ import React, { Component } from "react";
 import "./home.css";
 import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
-import { GetPersonalInfo } from "../../actions/action";
 import Loader from "../../components/loader/loader";
+import $ from "jquery";
 
 class Home extends Component {
   // Form load
   componentDidMount() {
-    this.props.GetPersonalInfo();
+    $(".sidenav-overlay").css("display", "none");
   }
 
   renderLoader = () => {
@@ -55,4 +55,4 @@ const mapStateToProps = (state) => {
 };
 
 // Default export
-export default connect(mapStateToProps, { GetPersonalInfo })(Home);
+export default connect(mapStateToProps)(Home);

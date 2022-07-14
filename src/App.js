@@ -8,10 +8,16 @@ import "materialize-css/dist/js/materialize";
 import { IconContext } from "react-icons";
 
 // Component imports
-import Routes from "./routes/routes";
 import { connect } from "react-redux";
+import { GetPersonalInfo } from "./actions/action";
+import Routes from "./routes/routes";
 
 class App extends Component {
+  // Form load
+  componentDidMount() {
+    this.props.GetPersonalInfo();
+  }
+
   renderDarkMode() {
     const { darkMode } = this.props;
     if (darkMode)
@@ -45,4 +51,4 @@ const mapStateToProps = (state) => {
 };
 
 // Default export
-export default connect(mapStateToProps)(App);
+export default connect(mapStateToProps, { GetPersonalInfo })(App);

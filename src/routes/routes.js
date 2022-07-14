@@ -9,7 +9,7 @@ import Portfolio from "../containers/portfolio/portfolio";
 import Contact from "../containers/contact/contact";
 import Resume from "../containers/resume/resume";
 import Error from "../components/error/error";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
 const Routes = () => {
   return (

@@ -16,7 +16,7 @@ import {
 import { GiCeilingLight } from "react-icons/gi";
 import { connect } from "react-redux";
 import $ from "jquery";
-import { SetDarkMode, GetPersonalInfo } from "../../actions/action";
+import { SetDarkMode } from "../../actions/action";
 
 class Nav extends Component {
   // Form load
@@ -63,8 +63,10 @@ class Nav extends Component {
             <div className="user-view">
               <div className="background"></div>
               <span className="initials">
-                {firstName.toString().slice(0, 1) +
-                  lastName.toString().slice(0, 1)}
+                {firstName || lastName
+                  ? firstName.toString().slice(0, 1) +
+                    lastName.toString().slice(0, 1)
+                  : ""}
               </span>
               <span className="name">{firstName + " " + lastName}</span>
             </div>
@@ -120,4 +122,4 @@ const mapStateToProps = (state) => {
 };
 
 // Default export
-export default connect(mapStateToProps, { GetPersonalInfo, SetDarkMode })(Nav);
+export default connect(mapStateToProps, { SetDarkMode })(Nav);
