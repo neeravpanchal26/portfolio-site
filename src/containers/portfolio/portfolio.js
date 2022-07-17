@@ -3,14 +3,13 @@ import React, { Component } from "react";
 
 // Custom imports
 import axios from "axios";
-import "./portfolio.css";
-import Nav from "../navbar/navbar";
 import { GoGitBranch, GoRepo } from "react-icons/go";
 import { connect } from "react-redux";
-import * as personalInfo from "../../actions/action";
 import Footer from "../../components/footer/footer";
 import Loader from "../../components/loader/loader";
 import Modal from "../../components/modal/modal";
+import Nav from "../navbar/navbar";
+import "./portfolio.css";
 
 class Portfolio extends Component {
   // default constructor
@@ -30,6 +29,16 @@ class Portfolio extends Component {
       .get(gitApiLink)
       .then((data) => this.setState({ gitData: data.data, loader: false }))
       .catch((error) => console.log(error));
+  }
+
+  componentDidUpdate(prevProps) {
+    console.log(prevProps);
+    if (prevProps.pending === true) {
+      axios
+        .get(this.props.gitApiLink)
+        .then((data) => this.setState({ gitData: data.data, loader: false }))
+        .catch((error) => console.log(error));
+    }
   }
 
   renderLoader = () => {
@@ -54,15 +63,19 @@ class Portfolio extends Component {
       .sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at))
       .map((repo) => (
         // Html build here
-        <div className="col s12 m6 l4" id={repo.id}>
+        <div className="col s12 m6 l4" key={repo.id}>
           <div className="card">
             <div className="card-content">
-              <i
-                className="material-icons right modal-trigger"
-                data-target={repo.name}
-              >
-                more_horiz
-              </i>
+              {repo.description ? (
+                <i
+                  className="material-icons right modal-trigger"
+                  data-target={repo.name}
+                >
+                  more_horiz
+                </i>
+              ) : (
+                ""
+              )}
             </div>
             <br />
             <div className="card-image center">
@@ -123,4 +136,4 @@ const mapStateToProps = (state) => {
 };
 
 // Default export
-export default connect(mapStateToProps, personalInfo)(Portfolio);
+export default connect(mapStateToProps)(Portfolio);

@@ -9,6 +9,7 @@ import Loader from "../../components/loader/loader";
 import { connect } from "react-redux";
 import Modal from "../../components/modal/modal";
 import { GetEvents } from "../../actions/action";
+import moment from "moment";
 
 class Timeline extends Component {
   // Form load
@@ -42,60 +43,41 @@ class Timeline extends Component {
           eventDescription,
           eventIcon,
         }) => {
-          if (eventDescription === "") {
-            return (
-              <div className="timeline-event" key={id}>
-                <div className="card timeline-content">
-                  <div className="card-content">
-                    <span className="card-title">{title}</span>
-                    <p>{eventNameTwo}</p>
-                    <div className="card-action">
-                      <span>
-                        {eventFrom.toUpperCase()} - {eventTo.toUpperCase()} •{" "}
-                        {eventType}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="timeline-badge white-text z-depth-2">
-                  <i className="material-icons">{eventIcon}</i>
-                </div>
-              </div>
-            );
-          } else {
-            return (
-              <div className="timeline-event" key={id}>
-                <div className="card timeline-content">
-                  <div className="card-content">
-                    <span className="card-title">
-                      {title}
+          return (
+            <div className="timeline-event" key={id}>
+              <div className="card timeline-content">
+                <div className="card-content">
+                  <span className="card-title">
+                    {title}
+                    {eventDescription ? (
                       <i
                         className="material-icons right modal-trigger"
                         data-target={title}
                       >
                         more_horiz
                       </i>
+                    ) : (
+                      ""
+                    )}
+                  </span>
+                  <p>{eventNameTwo}</p>
+                  <div className="card-action">
+                    <span>
+                      {moment(eventFrom).format("MMM YYYY").toUpperCase()} -{" "}
+                      {eventTo
+                        ? moment(eventTo).format("MMM YYYY").toUpperCase()
+                        : "PRESENT"}{" "}
+                      • {eventType}
                     </span>
-                    <p>{eventNameTwo}</p>
-                    <div className="card-action">
-                      <span>
-                        {eventFrom.toUpperCase()} - {eventTo.toUpperCase()} •{" "}
-                        {eventType}
-                      </span>
-                    </div>
                   </div>
-                  <Modal
-                    ID={title}
-                    Heading={title}
-                    Content={eventDescription}
-                  />
                 </div>
-                <div className="timeline-badge white-text z-depth-2">
-                  <i className="material-icons">{eventIcon}</i>
-                </div>
+                <Modal ID={title} Heading={title} Content={eventDescription} />
               </div>
-            );
-          }
+              <div className="timeline-badge white-text z-depth-2">
+                <i className="material-icons">{eventIcon}</i>
+              </div>
+            </div>
+          );
         }
       );
   };

@@ -68,7 +68,7 @@ class About extends Component {
               <b>Summary</b>
               <div className="divider"></div>
               <br />
-              {description}
+              <span dangerouslySetInnerHTML={{ __html: description }}></span>
             </div>
             <div className="col s12 m6 l6">
               <b>Skilled in</b>

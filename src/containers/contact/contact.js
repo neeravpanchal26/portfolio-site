@@ -75,4 +75,4 @@ const mapStateToProps = (state) => {
 };
 
 // Default export
-export default connect(mapStateToProps, personalInfo)(Contact);
+export default connect(mapStateToProps)(Contact);
