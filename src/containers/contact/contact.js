@@ -5,13 +5,24 @@ import React, { Component } from "react";
 import "./contact.css";
 import Nav from "../navbar/navbar";
 import { connect } from "react-redux";
-import * as personalInfo from "../../actions/action";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import { HiOutlineDocumentDownload } from "react-icons/hi";
 import Footer from "../../components/footer/footer";
 import Person from "../../assets/IMG_2778.jpg";
 import Loader from "../../components/loader/loader";
+import { GetEvents, GetSkills } from "../../actions/action";
+import { printResume } from "../resume/resume";
 
 class Contact extends Component {
+  componentDidMount() {
+    this.props.GetEvents();
+    this.props.GetSkills();
+  }
+
+  resumeDownload = () => {
+    printResume(this.props);
+  };
+
   renderLoader = () => {
     const { pending } = this.props;
     if (pending) {
@@ -41,12 +52,12 @@ class Contact extends Component {
               <span className="card-title center">
                 {firstName + " " + lastName}
               </span>
+              <h5>Let's build something amazing!</h5>
+              <div className="divider"></div>
               <div className="row">
+                <br />
                 <img alt="person" className="col s12 m12 l6" src={Person} />
                 <div className="col s12 m12 l6">
-                  <h5>Let's build something amazing!</h5>
-                  <div className="divider"></div>
-                  <br />
                   <a href={"mailto:" + email} className="chip">
                     <FaEnvelope id="Icon" /> • {email}
                   </a>
@@ -59,6 +70,10 @@ class Contact extends Component {
                     <FaLinkedin id="Icon" /> • {linkedInLink}
                   </a>
                   <br />
+                  <span className="chip" onClick={this.resumeDownload}>
+                    <HiOutlineDocumentDownload id="Icon" /> • Click here to grab
+                    my CV!
+                  </span>
                 </div>
               </div>
             </div>
@@ -75,4 +90,4 @@ const mapStateToProps = (state) => {
 };
 
 // Default export
-export default connect(mapStateToProps)(Contact);
+export default connect(mapStateToProps, { GetSkills, GetEvents })(Contact);

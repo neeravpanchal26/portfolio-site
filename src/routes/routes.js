@@ -7,7 +7,6 @@ import About from "../containers/about/about";
 import Timeline from "../containers/timeline/timeline";
 import Portfolio from "../containers/portfolio/portfolio";
 import Contact from "../containers/contact/contact";
-import Resume from "../containers/resume/resume";
 import Error from "../components/error/error";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 
@@ -20,7 +19,6 @@ const Routes = () => {
         <Route exact path="/timeline" component={Timeline} />
         <Route exact path="/portfolio" component={Portfolio} />
         <Route exact path="/contact" component={Contact} />
-        <Route exact path="/resume" component={Resume} />
         <Route path="*" component={Error} />
       </Switch>
     </Router>
